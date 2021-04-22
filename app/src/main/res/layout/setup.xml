@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/progresscircle"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/setupcircle" />
+
+
+    <LinearLayout
+        android:id="@+id/numberpickers"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="100dp"
+        >
+
+        <NumberPicker
+            android:id="@+id/hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:layout_marginLeft="100dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" />
+        <NumberPicker
+            android:id="@+id/minutes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/startfocusbutton"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:gravity="center|bottom"
+
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="500dp"
+            android:background="#72BF5E"
+            android:text="Start Focusing"
+            android:textColor="#FFFFFF"></Button>
+    </LinearLayout>
+
+</RelativeLayout>

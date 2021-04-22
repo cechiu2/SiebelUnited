@@ -94,7 +94,7 @@
             android:layout_width="300dp"
             android:layout_height="30dp"
             android:gravity="center"
-            android:text="21:30"
+            android:text="HH:MM"
             android:textColor="#a9a9a9"
             android:textSize="12sp"
             android:layout_marginLeft="55dp"
