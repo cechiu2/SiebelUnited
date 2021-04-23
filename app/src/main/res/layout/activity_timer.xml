@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f8fce4">
+
+    <ProgressBar
+        android:id="@+id/progresscircle"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/circular_progress_bar"
+        android:background="@drawable/circle"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:max="100"
+         />
+
+    <ImageButton
+        android:id="@+id/exit"
+        android:layout_width="52dp"
+        android:layout_height="60dp"
+        android:background="#f8fce4"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:onClick="exitFocus"
+        android:src="@drawable/exit_icon"></ImageButton>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/timeleft"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="__"
+            android:textColor="#a9a9a9"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="210dp"
+            android:layout_marginLeft="55dp"/>
+
+        <TextView
+            android:id="@+id/minutesliterally"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="minutes"
+            android:textColor="#a9a9a9"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="55dp"
+            android:layout_below="@id/timeleft"/>
+
+        <LinearLayout
+            android:id="@+id/musicbuttons"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+
+            tools:layout_editor_absoluteX="0dp">
+
+            <ImageButton
+                android:id="@+id/musicchoice"
+                android:layout_width="52dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/minutesliterally"
+                android:background="#f8fce4"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/music_icon"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/pauseplay"
+                android:layout_width="52dp"
+                android:layout_height="60dp"
+                android:background="#f8fce4"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/play_pause_icon"></ImageButton>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/thetime"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="21:30"
+            android:textColor="#a9a9a9"
+            android:textSize="12sp"
+            android:layout_marginLeft="55dp"
+            android:layout_below="@id/timeleft"/>
+
+        <LinearLayout
+            android:id="@+id/levelandname"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+
+            app:layout_constraintTop_toBottomOf="@+id/minuteslabel"
+            tools:layout_editor_absoluteX="0dp">
+            <TextView
+                android:id="@+id/level"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="105dp"
+                android:gravity="center_vertical"
+                android:text="Lv. __"
+                android:textColor="#73BF5E"
+                android:textSize="18sp"
+                android:layout_marginTop="70dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="105dp"
+                android:gravity="center_vertical"
+                android:text="__________________"
+                android:textColor="#a9a9a9"
+                android:textSize="18sp"
+                android:layout_marginTop="70dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/Focus"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:gravity="bottom | center"
+            android:text="Focus"
+            android:textColor="#73BF5E"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="55dp"
+            android:layout_marginBottom="-200dp"
+            android:layout_below="@id/timeleft" />
+
+    </LinearLayout>
+
+</RelativeLayout>

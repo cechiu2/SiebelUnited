@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Focus</string>
+    <string-array name="task_history">
+        <item>CS465 Homework</item>
+        <item>CS374 Homework</item>
+        <item>feed fish</item>
+        <item>buy some fruits</item>
+        <item>buy a new helicopter</item>
+    </string-array>
 </resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp">
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:textColor="#73BF5E"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:text="Congratulations!">
+    </TextView>
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:textColor="#73BF5E"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:text="You gained">
+    </TextView>
+    <TextView
+        android:id="@+id/exp_gained"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:textColor="#347deb"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:text="+200 EXP">
+    </TextView>
+
+</android.support.constraint.ConstraintLayout>
