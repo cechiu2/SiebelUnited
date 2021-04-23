@@ -90,7 +90,9 @@ public class TimerActivity extends AppCompatActivity implements ExpGainDialog.Ex
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
 		mp.seekTo(0);
-		mp.pause();
+		if (mp.isPlaying()) {
+			mp.pause();
+		}
     }
 
     private void startTimer(final long duration) {
@@ -111,7 +113,9 @@ public class TimerActivity extends AppCompatActivity implements ExpGainDialog.Ex
                 expGainDialog.setArguments(bundle);
                 expGainDialog.show(getSupportFragmentManager(), "exp_gain");
                 mp.seekTo(0);
-                mp.pause();
+				if (mp.isPlaying()) {
+					mp.pause();
+				}
             }
         }.start();
     }
@@ -138,7 +142,9 @@ public class TimerActivity extends AppCompatActivity implements ExpGainDialog.Ex
         intent.putExtra("duration", duration_mins);
         setResult(RESULT_OK, intent);
         mp.seekTo(0);
-        mp.pause();
+		if (mp.isPlaying()) {
+			mp.pause();
+		}
         finish();
     }
 }
