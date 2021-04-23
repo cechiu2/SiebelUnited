@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -31,10 +32,29 @@ public class TimerActivity extends AppCompatActivity implements ExpGainDialog.Ex
     int duration_mins;
     String task_name;
 
+    ImageButton play, next;
+    MediaPlayer mp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
+
+        play = (ImageButton) findViewById(R.id.pauseplay);
+        // next = (ImageButton) findViewById(R.id.musicchoice); // replace this with the next button
+
+		mp = MediaPlayer.create(this, R.raw.beautifulhope);
+		play.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				if (mp.isPlaying()) {
+					mp.pause();
+				}
+				else {
+					mp.start();
+				}
+			}
+		});
 
 //        Read parameter passed in by the main activity
         TextView lvl = findViewById(R.id.level);
@@ -69,6 +89,8 @@ public class TimerActivity extends AppCompatActivity implements ExpGainDialog.Ex
                 });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+		mp.seekTo(0);
+		mp.pause();
     }
 
     private void startTimer(final long duration) {
@@ -88,6 +110,8 @@ public class TimerActivity extends AppCompatActivity implements ExpGainDialog.Ex
                 bundle.putString("task_name", task_name);
                 expGainDialog.setArguments(bundle);
                 expGainDialog.show(getSupportFragmentManager(), "exp_gain");
+                mp.seekTo(0);
+                mp.pause();
             }
         }.start();
     }
@@ -113,6 +137,8 @@ public class TimerActivity extends AppCompatActivity implements ExpGainDialog.Ex
         intent.putExtra("exp_gain", exp_gain);
         intent.putExtra("duration", duration_mins);
         setResult(RESULT_OK, intent);
+        mp.seekTo(0);
+        mp.pause();
         finish();
     }
 }

@@ -75,15 +75,15 @@
 
             tools:layout_editor_absoluteX="0dp">
 
-            <ImageButton
-                android:id="@+id/musicchoice"
-                android:layout_width="52dp"
-                android:layout_height="60dp"
-                android:layout_below="@id/minutesliterally"
-                android:background="#f8fce4"
-                android:padding="10dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/music_icon"></ImageButton>
+<!--            <ImageButton-->
+<!--                android:id="@+id/musicchoice"-->
+<!--                android:layout_width="52dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:layout_below="@id/minutesliterally"-->
+<!--                android:background="#f8fce4"-->
+<!--                android:padding="10dp"-->
+<!--                android:scaleType="fitCenter"-->
+<!--                android:src="@drawable/music_icon"></ImageButton>-->
 
             <ImageButton
                 android:id="@+id/pauseplay"
