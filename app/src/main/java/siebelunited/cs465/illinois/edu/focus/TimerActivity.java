@@ -81,7 +81,7 @@ public class TimerActivity extends AppCompatActivity implements ExpGainDialog.Ex
                         finish();
                     }
                 })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                .setNegativeButton("Return to Focus Period", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.cancel();
@@ -93,6 +93,39 @@ public class TimerActivity extends AppCompatActivity implements ExpGainDialog.Ex
 		if (mp.isPlaying()) {
 			mp.pause();
 		}
+    }
+
+    public void finishEarly(View v) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Are you sure that you have finished your task and wish to leave the focus period?\nYour progress will be saved.")
+                .setCancelable(false)
+                .setPositiveButton("Finish Early", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        ExpGainDialog expGainDialog = new ExpGainDialog();
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("duration", (int) (duration_mins - (time_left_mili / (1000 * 60))));
+                        bundle.putString("task_name", task_name);
+                        expGainDialog.setArguments(bundle);
+                        expGainDialog.show(getSupportFragmentManager(), "exp_gain");
+                        mp.seekTo(0);
+                        if (mp.isPlaying()) {
+                            mp.pause();
+                        }
+                    }
+                })
+                .setNegativeButton("Return to Focus Period", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+        mp.seekTo(0);
+        if (mp.isPlaying()) {
+            mp.pause();
+        }
     }
 
     private void startTimer(final long duration) {

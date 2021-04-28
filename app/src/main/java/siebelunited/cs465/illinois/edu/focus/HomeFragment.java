@@ -97,7 +97,7 @@ public class HomeFragment extends Fragment{
         entries.add(new BarEntry(7f, 3));
         entries.add(new BarEntry(8f, 4));
         entries.add(new BarEntry(6f, 5));
-        entries.add(new BarEntry(5f, 5));
+        entries.add(new BarEntry((float) tasks_completed, 6));
 
         BarDataSet bardataset = new BarDataSet(entries, "Days");
 

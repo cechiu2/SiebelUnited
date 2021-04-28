@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements SelectTaskDialog.
         username = "???";
         user_level = 10;
         user_exp = 42;
-        tasks_completed = 10;
+        tasks_completed = 5;
         time_focused_hrs = 5;
         time_focused_min = 30;
         tasks = new ArrayList<>();
