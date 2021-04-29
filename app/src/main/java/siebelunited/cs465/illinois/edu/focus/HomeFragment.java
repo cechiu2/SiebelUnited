@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment{
         String username;
         int user_level;
         int user_exp;
-        int tasks_completed;
+        final int tasks_completed;
         int time_focused_hrs;
         int time_focused_min;
         int max_exp = 100;
@@ -64,18 +64,25 @@ public class HomeFragment extends Fragment{
         time_focused_min = getArguments().getInt("focused_min");
         ArrayList tasks = (ArrayList) getArguments().getSerializable("tasks");
 
-
 //        For each task in the task list, render it onto the task list view
         for (int i = 0; i < tasks.size(); i += 1) {
             CheckBox temp = new CheckBox(view.getContext());
+            final Task task = (Task)tasks.get(i);
             temp.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
             temp.setText(((Task)tasks.get(i)).task_name);
             temp.setChecked(((Task) tasks.get(i)).is_finished == 1);
-//            temp.setOnClickListener(new View.OnClickListener() {
-//                public void onClick(View v) {
-//
-//                }
-//            });
+            temp.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    if(task.is_finished == 0) {
+                        task.is_finished = 1;
+                        ((MainActivity)getActivity()).increaseTask();
+
+                    } else {
+                        task.is_finished = 0;
+                        ((MainActivity)getActivity()).decreaseTask();
+                    }
+                }
+            });
             task_list.addView(temp);
         }
 

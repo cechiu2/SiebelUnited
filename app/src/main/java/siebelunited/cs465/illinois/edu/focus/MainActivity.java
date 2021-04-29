@@ -165,30 +165,6 @@ public class MainActivity extends AppCompatActivity implements SelectTaskDialog.
         stat_body.setVisibility(View.VISIBLE);
     }
 
-    public void onCheckboxClicked(View view) {
-        boolean checked = ((CheckBox) view).isChecked();
-        String task_name = ((CheckBox) view).getText().toString();
-        Task current_task = getTask(task_name);
-
-        if(checked) {
-            current_task.is_finished = 0;
-            tasks_completed -=1;
-        } else {
-            current_task.is_finished = 1;
-            tasks_completed +=1;
-        }
-    }
-
-    public Task getTask(String task_name) {
-        for(Task task : tasks){
-            if(task.task_name.equals(task_name)) {
-                return task;
-            }
-        }
-
-        return null;
-    }
-
 
 //    Bottom nav bar listener
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
@@ -262,6 +238,14 @@ public class MainActivity extends AppCompatActivity implements SelectTaskDialog.
 
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    public void increaseTask(){
+        tasks_completed += 1;
+    }
+
+    public void decreaseTask(){
+        tasks_completed -= 1;
     }
 
 //    Helper function
