@@ -229,6 +229,7 @@
                 android:buttonTint="#73BF5E"
                 android:checked="false"
                 android:text="Task1"
+                android:onClick="onCheckboxClicked"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteY="400dp" />
 
@@ -242,6 +243,7 @@
                 android:checked="true"
                 android:text="Task2"
                 android:textStyle="bold"
+                android:onClick="onCheckboxClicked"
                 tools:layout_editor_absoluteY="400dp" />
 
             <CheckBox
@@ -253,6 +255,7 @@
                 android:buttonTint="#73BF5E"
                 android:checked="true"
                 android:text="Task3"
+                android:onClick="onCheckboxClicked"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteY="400dp" />
 
