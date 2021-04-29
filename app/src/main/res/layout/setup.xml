@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+<!--This page is no longer used. If you want to modify the setup page, please go to fragment_setup.xml-->
+
+
+
+
+
+
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"

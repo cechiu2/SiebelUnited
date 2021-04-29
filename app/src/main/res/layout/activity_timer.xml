@@ -126,19 +126,19 @@
             tools:layout_editor_absoluteX="0dp">
 
             <TextView
-                android:id="@+id/level"
+                android:id="@+id/task_task"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_marginLeft="105dp"
                 android:layout_marginTop="70dp"
                 android:gravity="center_vertical"
-                android:text="Lv. __"
+                android:text="Task:"
                 android:textColor="#73BF5E"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/name"
+                android:id="@+id/task_description"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_marginLeft="10dp"
@@ -147,7 +147,7 @@
                 android:gravity="center_vertical"
                 android:text="__________________"
                 android:textColor="#a9a9a9"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -171,12 +171,11 @@
 
         <TextView
             android:id="@+id/Focus"
-            android:layout_width="300dp"
-            android:layout_height="70dp"
-            android:layout_below="@id/timeleft"
-            android:layout_marginLeft="55dp"
-            android:layout_marginBottom="-200dp"
-            android:gravity="bottom | center"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_gravity="bottom"
+            android:layout_alignParentBottom="true"
+            android:gravity="bottom |center"
             android:text="Focus"
             android:textColor="#73BF5E"
             android:textSize="14sp"

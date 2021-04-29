@@ -40,7 +40,7 @@ public class TimerActivity extends AppCompatActivity implements ExpGainDialog.Ex
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
 
-        play = (ImageButton) findViewById(R.id.pauseplay);
+        play = (ImageButton) findViewById(R.id.musicpauseorplay);
         // next = (ImageButton) findViewById(R.id.musicchoice); // replace this with the next button
 
 		mp = MediaPlayer.create(this, R.raw.beautifulhope);
@@ -57,15 +57,11 @@ public class TimerActivity extends AppCompatActivity implements ExpGainDialog.Ex
 		});
 
 //        Read parameter passed in by the main activity
-        TextView lvl = findViewById(R.id.level);
-        lvl.setText(String.format("Lv. %s", getIntent().getExtras().getString("userlvl")));
-        TextView username = findViewById(R.id.name);
-        username.setText(getIntent().getExtras().getString("username"));
+        TextView task_description = findViewById(R.id.task_description);
+        task_description.setText(getIntent().getExtras().getString("task_name"));
 
         duration_mins = getIntent().getExtras().getInt("duration");
         startTimer((long) (duration_mins * 60 * 1000));
-
-        task_name = getIntent().getExtras().getString("task_name");
 
         mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.beautifulhope);
     }
