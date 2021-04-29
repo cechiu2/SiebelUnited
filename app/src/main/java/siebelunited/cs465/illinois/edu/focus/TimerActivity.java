@@ -24,6 +24,8 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.util.Log;
+
 
 public class TimerActivity extends AppCompatActivity implements ExpGainDialog.ExpGainDialogListener {
     private CountDownTimer timer;
@@ -34,6 +36,8 @@ public class TimerActivity extends AppCompatActivity implements ExpGainDialog.Ex
 
     ImageButton play, next;
     MediaPlayer mp;
+
+    int break_interval = 10000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +62,8 @@ public class TimerActivity extends AppCompatActivity implements ExpGainDialog.Ex
 
 //        Read parameter passed in by the main activity
         TextView task_description = findViewById(R.id.task_description);
-        task_description.setText(getIntent().getExtras().getString("task_name"));
+        task_name = getIntent().getExtras().getString("task_name");
+        task_description.setText(task_name);
 
         duration_mins = getIntent().getExtras().getInt("duration");
         startTimer((long) (duration_mins * 60 * 1000));
@@ -74,6 +79,7 @@ public class TimerActivity extends AppCompatActivity implements ExpGainDialog.Ex
                 .setPositiveButton("Give Up", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        timer.cancel();
                         finish();
                     }
                 })
@@ -102,8 +108,10 @@ public class TimerActivity extends AppCompatActivity implements ExpGainDialog.Ex
                         Bundle bundle = new Bundle();
                         bundle.putInt("duration", (int) (duration_mins - (time_left_mili / (1000 * 60))));
                         bundle.putString("task_name", task_name);
+                        Log.i("sbsb", task_name);
                         expGainDialog.setArguments(bundle);
                         expGainDialog.show(getSupportFragmentManager(), "exp_gain");
+                        timer.cancel();
                         mp.seekTo(0);
                         if (mp.isPlaying()) {
                             mp.pause();
@@ -131,6 +139,26 @@ public class TimerActivity extends AppCompatActivity implements ExpGainDialog.Ex
             public void onTick(long l) {
                 time_left_mili = l;
                 updateCountdown();
+//                if ((duration_mins * 60 * 1000 - time_left_mili) / break_interval != 0 && (duration_mins * 60 * 1000 - time_left_mili) % break_interval < 1000) {
+//                    AlertDialog.Builder builder = new AlertDialog.Builder(TimerActivity.this);
+//                    builder.setMessage("Hey! You've been focusing for 1 hour. Time to get some rest!\nTap RESUME to return to the focus period once you're ready.")
+//                            .setCancelable(false)
+//                            .setPositiveButton("Resume", new DialogInterface.OnClickListener() {
+//                                @Override
+//                                public void onClick(DialogInterface dialogInterface, int i) {
+//                                    dialogInterface.cancel();
+//                                    if (!mp.isPlaying()) {
+//                                        mp.start();
+//                                    }
+//                                }
+//                            });
+//                    AlertDialog alertDialog = builder.create();
+//                    alertDialog.show();
+//                    mp.seekTo(0);
+//                    if (mp.isPlaying()) {
+//                        mp.pause();
+//                    }
+//                }
             }
 
             @Override

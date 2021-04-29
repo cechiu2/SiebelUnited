@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDialogFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -18,7 +19,7 @@ public class ExpGainDialog extends AppCompatDialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.exp_gain_dialog, null);
-        int duration = getArguments().getInt("duration", 0);
+        final int duration = getArguments().getInt("duration", 0);
 
         TextView exp_gained = view.findViewById(R.id.exp_gained);
         exp_gained.setText(String.format("+%d EXP", duration));
@@ -27,6 +28,7 @@ public class ExpGainDialog extends AppCompatDialogFragment {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        Log.i("sbsb", String.valueOf(duration));
                         listener.feedback(getArguments().getString("task_name"), getArguments().getInt("duration", 0), 1, getArguments().getInt("duration", 0));
                     }
                 });

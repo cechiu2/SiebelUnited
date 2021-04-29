@@ -1,6 +1,6 @@
 package siebelunited.cs465.illinois.edu.focus;
-
-public class Task {
+import java.io.Serializable;
+public class Task implements java.io.Serializable {
     String task_name;
     int is_finished;
 

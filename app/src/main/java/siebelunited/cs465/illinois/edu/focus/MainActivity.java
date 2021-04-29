@@ -31,6 +31,7 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.ArrayList;
 
 import siebelunited.cs465.illinois.edu.focus.Task.*;
 
@@ -109,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements SelectTaskDialog.
 
 //        Basically creates a copy of the homepage fragment and pass all the parameters to it.
 //        The fragment will take these parameters and render the views accordingly.
-        HomeFragment home = new HomeFragment();
+        SetupFragment setup = new SetupFragment();
         Bundle bundle = new Bundle();
         bundle.putSerializable("tasks", (Serializable)tasks);
         bundle.putString("username", username);
@@ -118,8 +119,8 @@ public class MainActivity extends AppCompatActivity implements SelectTaskDialog.
         bundle.putInt("tasks_completed", tasks_completed);
         bundle.putInt("focused_hrs", time_focused_hrs);
         bundle.putInt("focused_min", time_focused_min);
-        home.setArguments(bundle);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, home).commit();
+        setup.setArguments(bundle);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, setup).commit();
 
 //        Set a listener for the bottom nav bar.
         BottomNavigationView bottom_nav = findViewById(R.id.bottomNavigationView);

@@ -89,6 +89,7 @@ public class HomeFragment extends Fragment{
 //        Bar chart code
 //        Bar chart resources found at https://medium.com/@karthikganiga007/create-barchart-in-android-studio-14943339a211
         BarChart barChart = (BarChart) view.findViewById(R.id.barchart);
+//        barChart.
 //        Hard coded data
         ArrayList<BarEntry> entries = new ArrayList<>();
         entries.add(new BarEntry(4f, 0));
@@ -110,9 +111,14 @@ public class HomeFragment extends Fragment{
         labels.add("F");
         labels.add("S");
 
+
         BarData data = new BarData(labels, bardataset);
+        data.setValueTextSize(16);
+        barChart.getXAxis().setTextSize(16);
+        barChart.getLegend().setTextSize(16);
+        barChart.setDescription("Record for the past 7 days");
+        barChart.setDescriptionTextSize(14);
         barChart.setData(data); // set the data and list of labels into chart
-        barChart.setDescription("Your Record");  // set the description
-        barChart.animateY(5000);
+        barChart.animateY(3000);
     }
 }
