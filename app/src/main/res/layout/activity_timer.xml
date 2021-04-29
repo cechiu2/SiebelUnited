@@ -11,15 +11,13 @@
     <ProgressBar
         android:id="@+id/progresscircle"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
-        android:layout_gravity="center"
-        android:layout_centerInParent="true"
+        android:layout_height="200dp"
+        android:layout_marginTop="200dp"
         android:indeterminate="false"
         android:progressDrawable="@drawable/circular_progress_bar"
         android:background="@drawable/circle"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:max="100"
-         />
+        android:max="100" />
 
     <ImageButton
         android:id="@+id/exit"
@@ -37,10 +35,10 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_vertical"
-
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent">
+        android:gravity="center_horizontal"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="0dp"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/timeleft"
@@ -61,16 +59,15 @@
             android:layout_below="@id/timeleft"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
-            android:text="minutes"
+            android:text="min"
             android:textColor="#a9a9a9"
             android:textSize="24sp"
-
             android:textStyle="bold" />
 
         <LinearLayout
             android:id="@+id/musicbuttons"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
 
@@ -87,25 +84,36 @@
             <!--                android:src="@drawable/music_icon"></ImageButton>-->
 
             <ImageButton
-                android:id="@+id/pauseplay"
-                android:layout_width="52dp"
-                android:layout_height="60dp"
+                android:id="@+id/musicpauseorplay"
+                android:layout_width="53dp"
+                android:layout_height="57dp"
                 android:background="#f8fce4"
                 android:padding="10dp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/play_pause_icon"></ImageButton>
+                android:src="@drawable/music_icon"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/nextsong"
+                android:layout_width="52dp"
+                android:layout_height="57dp"
+                android:background="#f8fce4"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/nextsong"></ImageButton>
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/thetime"
-            android:layout_width="300dp"
-            android:layout_height="30dp"
-            android:layout_below="@id/timeleft"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center"
-            android:text="21:30"
-            android:textColor="#a9a9a9"
-            android:textSize="12sp" />
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/thetime"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_below="@id/timeleft"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:gravity="center"-->
+<!--            android:text="21:30"-->
+<!--            android:textColor="#a9a9a9"-->
+<!--            android:textSize="12sp" />-->
 
         <LinearLayout
             android:id="@+id/levelandname"

@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-    <LinearLayout
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:gravity="center_vertical"
@@ -13,27 +17,28 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/top_banner"
             android:layout_width="265dp"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:text="Hi __, maybe start a new focus period after 10 mins?"
-            android:textColor="#347deb"
+            android:text="Hi __, maybe start a new focusing after 10 mins?"
+            android:textColor="#627eba"
             android:textSize="15sp"
             android:textStyle="bold"
 
             ></TextView>
 
         <Button
-            android:layout_width="75dp"
-            android:layout_height="50dp"
+            android:layout_width="58dp"
+            android:layout_height="30dp"
             android:layout_gravity="right |center_vertical"
+            android:layout_marginLeft="13dp"
             android:background="#e9f2eb"
             android:text="OK"
+            android:textStyle="bold"
             android:textColor="#73BF5E">
 
         </Button>
-    </LinearLayout>
+    </android.support.v7.widget.LinearLayoutCompat>
 
     <View
         android:layout_width="match_parent"
@@ -42,8 +47,8 @@
         android:background="#e3e3e3"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
-    <!--User data-->
-    <LinearLayout
+
+    <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginTop="75dp"
@@ -52,13 +57,12 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp">
 
-        <LinearLayout
+        <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="250dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/user_info"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:text="Lv._ __________">
@@ -66,14 +70,11 @@
             </TextView>
 
             <ProgressBar
-                android:id="@+id/exp_bar"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:progress="0"></ProgressBar>
+                android:layout_height="30dp"></ProgressBar>
 
             <TextView
-                android:id="@+id/num_tasks"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
@@ -82,23 +83,23 @@
 
             </TextView>
 
-        </LinearLayout>
+        </android.support.v7.widget.LinearLayoutCompat>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/pet_dog"></ImageView>
-    </LinearLayout>
-    <!--Tabs that switches between task list and statistics-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="175dp"
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="352dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="180dp"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp">
+        tools:layout_editor_absoluteX="-1dp">
 
         <LinearLayout
-            android:id="@+id/todo_tab"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="10dp"
@@ -107,22 +108,14 @@
             android:gravity="center">
 
             <ImageButton
-                android:id="@+id/todo_button"
-                android:layout_width="40dp"
-                android:layout_height="50dp"
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="1dp"
                 android:background="@drawable/list_icon_selected"
                 android:onClick="list_onClick"></ImageButton>
         </LinearLayout>
 
-        <View
-            android:layout_width="2dp"
-            android:layout_height="match_parent"
-            android:background="#e3e3e3"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="60dp" />
-
         <LinearLayout
-            android:id="@+id/stat_tab"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
@@ -131,13 +124,18 @@
             android:gravity="center">
 
             <ImageButton
-                android:id="@+id/stat_button"
-                android:layout_width="40dp"
-                android:layout_height="50dp"
-                android:background="@drawable/bar_icon_unselected"
-                android:onClick="stat_onClick"></ImageButton>
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/bar_icon_unselected"></ImageButton>
         </LinearLayout>
-    </LinearLayout>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#e3e3e3"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="60dp" />
+    </android.support.v7.widget.LinearLayoutCompat>
 
     <View
         android:layout_width="match_parent"
@@ -147,18 +145,18 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
     <!--to-do list-->
+    <!--    stats-->
 
-    <LinearLayout
-        android:id="@+id/todo_body"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="260dp"
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="351dp"
+        android:layout_height="414dp"
+        android:layout_marginTop="240dp"
         android:orientation="vertical"
         android:visibility="visible"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp">
 
-        <LinearLayout
+        <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:background="@drawable/layout_bg"
@@ -168,14 +166,14 @@
             tools:layout_editor_absoluteY="255dp">
 
             <ImageView
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginLeft="50dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/rokect_iconmdpi"></ImageView>
+                android:background="@drawable/rokect_icon"></ImageView>
 
-            <LinearLayout
+            <android.support.v7.widget.LinearLayoutCompat
                 android:layout_width="250dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -192,19 +190,18 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/time_focused"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
                     android:gravity="center"
                     android:text="_hrs _mins"
-                    android:textColor="#347deb"
+                    android:textColor="#627eba"
                     android:textSize="22sp"
                     android:textStyle="bold"></TextView>
-            </LinearLayout>
-        </LinearLayout>
+            </android.support.v7.widget.LinearLayoutCompat>
+        </android.support.v7.widget.LinearLayoutCompat>
 
-        <LinearLayout
+        <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:layout_marginTop="20dp"
@@ -212,43 +209,71 @@
             android:orientation="vertical"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="400dp">
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
                 android:gravity="left |center_vertical"
                 android:text="Task List:"
                 android:textColor="#73BF5E"
                 android:textSize="18sp"
                 android:textStyle="bold"></TextView>
 
-            <LinearLayout
-                android:id="@+id/task_list"
-                android:layout_width="match_parent"
+            <CheckBox
+                android:id="@+id/chk1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="10dp"
-                android:orientation="vertical"></LinearLayout>
+                android:buttonTint="#73BF5E"
+                android:checked="false"
+                android:text="Task1"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteY="400dp" />
 
-        </LinearLayout>
-    </LinearLayout>
-    <!--Statistics-->
-    <LinearLayout
-        android:id="@+id/stat_body"
+            <CheckBox
+                android:id="@+id/chk2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:buttonTint="#73BF5E"
+                android:checked="true"
+                android:text="Task2"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteY="400dp" />
+
+            <CheckBox
+                android:id="@+id/chk3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:buttonTint="#73BF5E"
+                android:checked="true"
+                android:text="Task3"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteY="400dp" />
+
+
+        </android.support.v7.widget.LinearLayoutCompat>
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="260dp"
         android:orientation="vertical"
-        android:visibility="gone"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp">
+        tools:layout_editor_absoluteX="0dp"
+        android:visibility="gone">
 
         <com.github.mikephil.charting.charts.BarChart
             android:id="@+id/barchart"
             android:layout_width="match_parent"
             android:layout_height="300dp" />
-    </LinearLayout>
+    </android.support.v7.widget.LinearLayoutCompat>
 
     <View
         android:layout_width="match_parent"
@@ -257,4 +282,18 @@
         android:background="#e3e3e3"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="0dp" />
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginBottom="0dp"
+        android:background="#ffffff"
+        app:elevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
 </android.support.constraint.ConstraintLayout>
