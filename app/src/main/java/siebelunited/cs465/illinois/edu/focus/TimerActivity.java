@@ -34,7 +34,7 @@ public class TimerActivity extends AppCompatActivity implements ExpGainDialog.Ex
     int duration_mins;
     String task_name;
 
-    ImageButton play, next;
+    ImageButton play, pause;
     MediaPlayer mp;
 
     int break_interval = 10000;
@@ -44,18 +44,32 @@ public class TimerActivity extends AppCompatActivity implements ExpGainDialog.Ex
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
 
-        play = (ImageButton) findViewById(R.id.musicpauseorplay);
-        // next = (ImageButton) findViewById(R.id.musicchoice); // replace this with the next button
+        play = (ImageButton) findViewById(R.id.musicplay);
+        pause = (ImageButton) findViewById(R.id.musicpause);
 
 		mp = MediaPlayer.create(this, R.raw.beautifulhope);
 		play.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
 				if (mp.isPlaying()) {
-					mp.pause();
+					// do nothing
+					;
 				}
 				else {
 					mp.start();
+				}
+			}
+		});
+
+		pause.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				if (mp.isPlaying()) {
+					mp.pause();
+					;
+				}
+				else {
+					;
 				}
 			}
 		});

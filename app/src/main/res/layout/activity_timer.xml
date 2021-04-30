@@ -84,7 +84,7 @@
             <!--                android:src="@drawable/music_icon"></ImageButton>-->
 
             <ImageButton
-                android:id="@+id/musicpauseorplay"
+                android:id="@+id/musicplay"
                 android:layout_width="53dp"
                 android:layout_height="57dp"
                 android:background="#f8fce4"
@@ -93,13 +93,13 @@
                 android:src="@drawable/music_icon"></ImageButton>
 
             <ImageButton
-                android:id="@+id/nextsong"
+                android:id="@+id/musicpause"
                 android:layout_width="52dp"
                 android:layout_height="57dp"
                 android:background="#f8fce4"
                 android:padding="10dp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/nextsong"></ImageButton>
+                android:src="@drawable/music_paused"></ImageButton>
         </LinearLayout>
 
 
