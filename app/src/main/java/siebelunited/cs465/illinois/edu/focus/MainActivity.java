@@ -242,6 +242,7 @@ public class MainActivity extends AppCompatActivity implements SelectTaskDialog.
 
     public void increaseTask(){
         tasks_completed += 1;
+
     }
 
     public void decreaseTask(){
@@ -292,6 +293,7 @@ public class MainActivity extends AppCompatActivity implements SelectTaskDialog.
             if (resultCode == RESULT_OK) {
 //              Get the parameter returned by the timer activity and update the corresponding variables
 //                Add a new task to the Tasks array list
+                Log.e("sbsb", String.valueOf(data.getExtras().getInt("completed")));
                 Task task = new Task(data.getExtras().getString("task_name"), data.getExtras().getInt("completed"));
                 tasks.add(task);
 //                Update exp

@@ -80,7 +80,7 @@ public class TimerActivity extends AppCompatActivity implements ExpGainDialog.Ex
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         timer.cancel();
-                        finish();
+                        feedback(task_name, duration_mins, 0, 0);
                     }
                 })
                 .setNegativeButton("Return to Focus Period", new DialogInterface.OnClickListener() {
