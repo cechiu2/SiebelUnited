@@ -1,11 +1,14 @@
 package siebelunited.cs465.illinois.edu.focus;
 import android.content.DialogInterface;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.CompoundButtonCompat;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -44,6 +47,7 @@ public class HomeFragment extends Fragment{
             CheckBox temp = new CheckBox(getView().getContext());
             final Task task = (Task)tasks.get(i);
             temp.setId(i);
+            CompoundButtonCompat.setButtonTintList(temp, ColorStateList.valueOf(Color.parseColor("#73BF5E")));
             temp.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
             temp.setText(((Task)tasks.get(i)).task_name);
             temp.setChecked(((Task) tasks.get(i)).is_finished == 1);
